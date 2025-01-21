@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregador de Feeds</title>
+</head>
+<body>
+  <h1>Últimos Posts</h1>
+  {% for post in posts %}
+    <article>
+      <h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
+      <p><strong>{{ post.blogTitle }}</strong> - {{ post.categoria }}</p>
+      <time>{{ post.date | date("%Y-%m-%d") }}</time>
+    </article>
+  {% endfor %}
+</body>
+</html>
